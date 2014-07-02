@@ -1,0 +1,15 @@
+Create New Post
+
+<form method="post" action="<%=posts_url%>">
+  <input type="hidden" name="post[user_id]" value= "<%=current_user.id%>">
+  <label>
+    Title
+    <input type="text" name="post[title]" value= "">
+  </label>
+  <br>
+  <label>
+    Body
+    <textarea name="post[body]" value= "" ></textarea>
+  </label>
+  <input type="submit" value="Create New Post">
+</form>

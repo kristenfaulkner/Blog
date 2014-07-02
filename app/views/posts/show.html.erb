@@ -1,0 +1,25 @@
+<%= @post.title%>
+<br>
+<%= @post.body %>
+<br>
+<br>
+<br>
+<%@post.tags.each do |tag|%>
+<%= tag.body%>
+<%= button_to "Remove tag", tag_url(tag), method: :delete %>
+<%end%>
+
+Add Tag
+<form method = "post" action="<%=post_tags_url(@post)%>">
+  <input type="hidden" name="tag[post_id]" value="<%=@post.id%>">
+  <label>
+    Tag
+  <input type="text" name="tag[body]" value="">
+</label>
+<input type="submit" value="Add Tag">
+</form>
+
+
+<%= link_to "Posts", posts_url%>
+<%= link_to "Edit Post", edit_post_url(@post)%>
+<%= button_to "Delete Post", post_url(@post), method: :delete%>

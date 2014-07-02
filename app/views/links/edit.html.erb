@@ -1,0 +1,17 @@
+Edit Link
+
+<form method="post" action="<%=link_url(@link)%>">
+  <input type="hidden" name="_method" value="put">
+  <label>
+    Title
+    <input type="text" name="link[title]" value= "<%=@link.title if @link%>">
+  </label>
+  <label>
+    URL
+    <input type="password" name="link[url]" value= "<%=@link.url if @link%>">
+  </label>
+  <input type= "submit" value="Update Link">
+</form>
+
+<%= link_to "Edit Link", edit_link_url(@link)%>
+<%= link_to "New Link", new_link_url%>

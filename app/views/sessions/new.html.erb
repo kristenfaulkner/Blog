@@ -1,0 +1,23 @@
+<%if signed_in?%>
+
+<%=link_to "Links", links_url%>
+<%=link_to "Posts", posts_url%>
+
+<%else%>
+<h1>Sign In</h1>
+<form method="post" action="<%=session_url%>">
+  
+  <label>
+    Username
+    <input type="text" name="user[username]" value= "">
+  </label>
+  <label>
+    Password
+    <input type="password" name="user[password]" value= "">
+  </label>
+  <input type="submit" value="Sign In">
+</form>
+
+
+<%end%>
+
